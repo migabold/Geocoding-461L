@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/input_addres" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:layout_above="@+id/button2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:onClick="searchAddress"
+        android:text="@string/button_search" />
+
+    <EditText
+        android:id="@+id/input_address"
+        android:layout_width="176dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/button1"
+        android:ems="10"
+        android:hint="@string/input_address"
+        android:inputType="text" />
+
+   <EditText
+        android:id="@+id/input_addres"
+        android:layout_width="176dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/input_address"
+        android:layout_below="@+id/input_address"
+        android:ems="10"
+        android:hint="@string/input_addres"
+        android:inputType="text" >
+    </EditText>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:layout_alignBottom="@+id/input_addres"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_alignParentRight="true"
+        android:onClick="findDistance"
+        android:text="@string/button_distance" />
+
+</RelativeLayout>
