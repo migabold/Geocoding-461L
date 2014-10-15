@@ -35,7 +35,6 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity{
 
-	// Google Map
 	private GoogleMap googleMap;
 	private GeoPoint point;
 	private MarkerOptions markerOptions;
@@ -84,18 +83,8 @@ public class MainActivity extends Activity{
 		
 		mOption1.icon(BitmapDescriptorFactory.fromResource(R.drawable.zombie));
 		marker = googleMap.addMarker(mOption1);
-		
-		//Location myLoc = googleMap.getMyLocation();
-		/*CameraPosition cameraPosition = new CameraPosition.Builder()
-		.target(new LatLng(myLoc.getLatitude(), myLoc.getLongitude())).zoom(12).build();
-		googleMap.animateCamera(CameraUpdateFactory
-				.newCameraPosition(cameraPosition));*/
-		
 	}
 
-	/**
-	 * function to load map. If map is not created it will create it for you
-	 * */
 	private void initilizeMap() {
 		if (googleMap == null) {
 			googleMap = ((MapFragment) getFragmentManager().findFragmentById(
@@ -216,7 +205,7 @@ public class MainActivity extends Activity{
 		Address location1 = getLocationFromAddress(input_address1.getText().toString());
 		EditText input_addres = (EditText) findViewById(R.id.input_addres);
 		Address location2 = getLocationFromAddress(input_addres.getText().toString());
-	    int Radius=6371;//radius of earth in Km         
+	    int Radius=6371;       
 	    double lat1 = location1.getLatitude();
 	    double lat2 = location2.getLatitude();
 	    double lon1 = location1.getLongitude();
@@ -233,8 +222,6 @@ public class MainActivity extends Activity{
 	    int milesInDec =  Integer.valueOf(newFormat.format(miles));
 	    double meter=(valueResult%1000);
 	    int meterInDec= Integer.valueOf(newFormat.format(meter));
-	    //Integer.toString(valueResult);
-	    
 	    Toast toast = Toast.makeText(this, String.valueOf(milesInDec)+" miles", Toast.LENGTH_LONG);
 	    toast.show();
 	 }
